@@ -1,4 +1,5 @@
 import "../styles/hero.css";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -13,13 +14,17 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="upload-btn">
-            Upload Photo
-          </button>
+          <Link to="/upload">
+            <button className="upload-btn">
+              Upload Photo
+            </button>
+          </Link>
 
-          <button className="gallery-btn">
-            Explore Gallery
-          </button>
+          <a href="#gallery">
+            <button className="gallery-btn">
+              Explore Gallery
+            </button>
+          </a>
         </div>
       </div>
     </section>

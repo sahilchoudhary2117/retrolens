@@ -30,7 +30,9 @@ return (
     <div style={{ padding: "30px" }}>
       <h2>Total Photos: {photos.length}</h2>
 
-      <Gallery photos={photos} />
+<div id="gallery">
+  <Gallery photos={photos} />
+</div>
     </div>
   </div>
 );
