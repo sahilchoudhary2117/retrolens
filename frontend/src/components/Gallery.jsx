@@ -2,7 +2,7 @@ import Masonry from "react-masonry-css";
 import PhotoCard from "./PhotoCard";
 import "../styles/gallery.css";
 
-function Gallery({ photos }) {
+function Gallery({ photos, onDelete }) {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -17,7 +17,11 @@ function Gallery({ photos }) {
       columnClassName="masonry-column"
     >
       {photos.map((photo) => (
-        <PhotoCard key={photo.id} photo={photo} />
+        <PhotoCard
+          key={photo.id}
+          photo={photo}
+          onDelete={onDelete}
+        />
       ))}
     </Masonry>
   );

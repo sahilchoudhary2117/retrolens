@@ -1,32 +1,23 @@
-from PIL import Image, ImageEnhance
-from pathlib import Path
+from .filters.vintage import apply_vintage
+from .filters.sepia import apply_sepia
+from .filters.base import save_filtered_image
+from .filters.bw import apply_bw
+from .filters.warm import apply_warm
+from .filters.vhs import apply_vhs
 
 
-def apply_retro_filter(image_path):
-    """
-    Apply a simple retro filter to an uploaded image.
-    """
+FILTERS = {
+    "vintage": apply_vintage,
+    "sepia": apply_sepia,
+    "bw": apply_bw,
+    "warm": apply_warm,
+    "vhs": apply_vhs,   
+}
 
-    image = Image.open(image_path).convert("RGB")
 
-    # Slightly reduce color saturation
-    color = ImageEnhance.Color(image)
-    image = color.enhance(0.7)
+def apply_retro_filter(image_path, filter_name):
+    filter_function = FILTERS.get(filter_name, apply_vintage)
 
-    # Increase contrast a little
-    contrast = ImageEnhance.Contrast(image)
-    image = contrast.enhance(1.15)
+    image = filter_function(image_path)
 
-    # Slightly reduce brightness
-    brightness = ImageEnhance.Brightness(image)
-    image = brightness.enhance(0.95)
-
-    # Save edited image
-    edited_dir = Path(image_path).parent.parent / "edited"
-    edited_dir.mkdir(exist_ok=True)
-
-    output_path = edited_dir / Path(image_path).name
-
-    image.save(output_path)
-
-    return str(output_path)
+    return save_filtered_image(image, image_path)

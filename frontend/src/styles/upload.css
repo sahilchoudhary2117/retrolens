@@ -1,0 +1,159 @@
+.upload-page {
+  min-height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 850px;
+  background: #1b1b1b;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+
+.upload-container h1 {
+  text-align: center;
+  color: #F59E0B;
+  margin-bottom: 35px;
+  font-size: 34px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.form-label{
+    color:#F59E0B;
+    font-weight:600;
+    font-size:15px;
+}
+
+.upload-container input,
+.upload-container textarea,
+.upload-container select{
+
+    width:100%;
+    padding:14px 16px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#2a2a2a;
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+.upload-container input:focus,
+.upload-container textarea:focus,
+.upload-container select:focus{
+
+    background:#323232;
+    box-shadow:0 0 0 2px #F59E0B;
+}
+
+textarea{
+
+    resize:vertical;
+    min-height:120px;
+}
+
+.preview-section{
+
+    text-align:center;
+}
+
+.preview-title{
+
+    color:#F59E0B;
+    margin-bottom:15px;
+}
+
+.preview-image{
+
+    width:100%;
+    max-width:420px;
+    border-radius:16px;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.preview-placeholder{
+
+    height:250px;
+    border:2px dashed #555;
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:#888;
+}
+
+.preview-placeholder span{
+
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.upload-btn{
+
+    margin-top:15px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#F59E0B;
+    color:#111;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.upload-btn:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(212,175,55,.35);
+}
+
+.upload-btn:disabled{
+
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+@media(max-width:768px){
+
+.upload-container{
+
+padding:25px;
+
+}
+
+.upload-container h1{
+
+font-size:28px;
+
+}
+
+.preview-image{
+
+max-width:100%;
+
+}
+
+}
