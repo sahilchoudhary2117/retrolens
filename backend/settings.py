@@ -29,7 +29,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     "http://localhost:5173",
-    "https://retrolens-backend.onrender.com"
+    "https://retrolens-flame.vercel.app"
     ]
 
 
@@ -127,7 +127,7 @@ USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://retrolens-backend.onrender.com"
+    "https://retrolens-flame.vercel.app"
 ]
 
 STATIC_URL = 'static/'
