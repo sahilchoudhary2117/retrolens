@@ -27,7 +27,10 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["https://retrolens-flame.vercel.app/"]
+ALLOWED_HOSTS = [
+    "http://localhost:5173",
+    "https://retrolens-backend.onrender.com/"
+    ]
 
 
 # Application definition
@@ -124,6 +127,7 @@ USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://retrolens-backend.onrender.com/"
 ]
 
 STATIC_URL = 'static/'
