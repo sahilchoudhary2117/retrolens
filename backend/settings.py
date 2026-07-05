@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://retrolens-flame.vercel.app/"]
 
 
 # Application definition
