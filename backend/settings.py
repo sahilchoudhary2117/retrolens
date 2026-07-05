@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "retrolens-flame.vercel.app",
+    "retrolens-backend.onrender.com"
 ]
 
 
