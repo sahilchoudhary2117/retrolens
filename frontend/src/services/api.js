@@ -1,15 +1,13 @@
 import axios from "axios";
 
+const BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://127.0.0.1:8000/api/"
+    : "https://retrolens-backend.onrender.com/api/";
 
-  // if(window.location.hostname === "localhost"){
-  //   const api = axios.create({
-  //     baseURL: "http://127.0.0.1:8000/api/"
-  //   });
-  // } else {
-    const api = axios.create({
-      baseURL: "https://retrolens-backend.onrender.com/api/"
-    });
-  // }
+const api = axios.create({
+  baseURL: BASE_URL,
+});
 
 // Automatically attach JWT token to every request
 api.interceptors.request.use(
@@ -25,7 +23,6 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Delete Photo
 export const deletePhoto = (id) => {
   return api.delete(`photos/${id}/`);
 };

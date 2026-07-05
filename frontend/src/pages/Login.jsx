@@ -28,9 +28,12 @@ function Login() {
 
       navigate("/");
     } catch (error) {
-      console.error(error);
-      toast.error("Invalid username or password.");
-    }
+       console.error(error);
+
+       console.log("Response:", error.response);
+
+       toast.error("Login failed");
+       }
   }
 
   return (
