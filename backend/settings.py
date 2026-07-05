@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+# from local_settings import *
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +31,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "retrolens-backend.onrender.com",
+    "retrolens-flame.vercel.app",
 ]
 
 
@@ -128,7 +129,8 @@ USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://retrolens-flame.vercel.app"
+    "https://retrolens-flame.vercel.app",
+    "http://retrolens-flame.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
