@@ -2,7 +2,7 @@ import os
 from django.contrib.auth.models import User
 from .auth_serializers import RegisterSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 
 from django.core.files import File
@@ -23,6 +23,7 @@ def photo_list(request):
 
 
 @api_view(["POST"])
+@permission_classes([IsAuthenticated])
 def upload_photo(request):
 
     serializer = PhotoSerializer(data=request.data)
@@ -75,7 +76,7 @@ def delete_photo(request, pk):
         return Response({"error": "Photo not found."}, status=404)
     
 @api_view(["POST"])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def register(request):
 
     serializer = RegisterSerializer(data=request.data)
