@@ -1,6 +1,12 @@
 import "../styles/card.css";
 import { useAuth } from "../context/AuthContext";
 
+// Backend URL
+const BACKEND_URL =
+  window.location.hostname === "localhost"
+    ? "http://127.0.0.1:8000"
+    : "https://retrolens-backend.onrender.com";
+
 function PhotoCard({ photo, onDelete }) {
   const { user } = useAuth();
 
@@ -12,7 +18,7 @@ function PhotoCard({ photo, onDelete }) {
     <div className="photo-card">
       <div className="photo-image">
         <img
-          src={`http://127.0.0.1:8000${photo.edited_image}`}
+          src={`${BACKEND_URL}${photo.edited_image}`}
           alt={photo.title}
         />
       </div>
@@ -34,7 +40,7 @@ function PhotoCard({ photo, onDelete }) {
 
         <div className="photo-actions">
           <a
-            href={`http://127.0.0.1:8000${photo.edited_image}`}
+            href={`${BACKEND_URL}${photo.edited_image}`}
             target="_blank"
             rel="noreferrer"
             className="view-btn"
