@@ -17,9 +17,9 @@ class Photo(models.Model):
 
     description=models.TextField()
 
-    image=models.ImageField(upload_to="original/")
+    image = models.TextField()
 
-    edited_image=models.ImageField(upload_to="edited/", blank=True)
+    edited_image = models.TextField(blank=True)
 
     tags=models.CharField(max_length=200)
 
